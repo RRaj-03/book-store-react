@@ -1,8 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext,useEffect } from 'react'
 import modalContext from '../context/modalContext'
 const Modal = () => {
     const context = useContext(modalContext)
-    const { reset,Book,modal } =context
+    const { reset,Book,modal,fetchData } =context
+    useEffect(() => {
+        if(modal.id){
+          fetchData().then(()=>{})   
+        
+        }
+        }, [modal])
     return (
         modal.id && <>
             <div id="extralarge-modal" tabIndex="-1" className=" overflow-y-scroll overflow-x-hidden fixed top-0 right-0 left-0 z-[51] w-full md:inset-0 h-modal h-full" >

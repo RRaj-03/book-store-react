@@ -22,12 +22,7 @@ const ModalState = (props) => {
     let parsedData = await data.json()
     setBook(parsedData)
 };
-//   useEffect(() => {
-//     if(modal.id){
-//       fetchData().then(()=>{})   
-    
-//     }
-//     }, [modal])
+
     
     return (
         <ModalContext.Provider value={{ showModal,reset,fetchData,Book,modal }}>
