@@ -16,8 +16,9 @@ const ModalState = (props) => {
     setBook({});
     setModal({});
   }
-  const fetchData = async () => {
-    const url = `https://api.itbook.store/1.0/books/${modal.id}`;
+
+  const fetchData = async (id) => {
+    const url = `https://api.itbook.store/1.0/books/${id}`;
     const data = await fetch(url);
     let parsedData = await data.json()
     setBook(parsedData)
