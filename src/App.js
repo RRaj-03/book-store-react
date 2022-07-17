@@ -1,17 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
-import BookCard from './components/BookCard';
-
+import Modal from './components/Modal';
+import ModalState from './context/ModalState';
 function App() {
+ 
   return (
     <>
+    <ModalState>
     <Navbar/>
-    <Home/>
+    <Home />
     {/* <BookCard/> */}
+    <Modal/>
     <Footer/>
+    </ModalState>
     </>
   );
 }

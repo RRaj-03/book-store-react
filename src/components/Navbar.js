@@ -49,7 +49,7 @@ const Navbar = () => {
                     </button>
                 </div>
             </div>
-            <div className={'bg-gray-300 h-[100%] fixed w-[100%] sm:w-[40%] lg:w-[30%] top-0 transition-all  left-[-100%] sm:left-[-40%] lg:left-[-30%] my-navBoxShadow' + (HamburgerMenu ? " transform  lg:translate-x-[100%] sm:translate-x-[100%] translate-x-[100%]" : "")}>
+            <div className={'bg-gray-300 h-auto sm:h-full fixed w-[100%] sm:w-[40%] lg:w-[30%] top-0 transition-all  left-[-100%] sm:left-[-40%] lg:left-[-30%] my-navBoxShadow' + (HamburgerMenu ? " transform  lg:translate-x-[100%] sm:translate-x-[100%] translate-x-[100%]" : "")}>
                 <nav className="md:m-auto flex flex-col items-center text-base justify-center">
                     <button type="button" className="ml-auto mr-2 my-2 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" onClick={() => {
                         if (HamburgerMenu) {
@@ -77,7 +77,7 @@ const Navbar = () => {
                         </div>
                     </form>
 
-                    <div className='md:m-auto flex flex-col items-center text-base justify-center'>
+                    <div className='md:m-auto flex flex-col items-center text-base justify-center mb-10'>
                         <div className='text-3xl mt-3'>Geners</div>
                         <a className="m-auto text-xl hover:text-gray-900 my-1 mt-3">First Link</a>
                         <a className="m-auto text-xl hover:text-gray-900 my-1">Second Link</a>
