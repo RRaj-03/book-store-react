@@ -119,12 +119,20 @@ const Home = (props) => {
                 <div className="flex flex-wrap justify-center m-4">
                     {Article.slice(0, 8).map(element => {
                         return (
-                            <BookCard element={element} category={"NEW ARRIVALS"} id={element.isbn13} showModal={showModal}/>
+                            <div className="lg:w-1/4 mmm:w-1/3 p-4"  key={element.isbn13} onClick={()=>{
+                                showModal(element.isbn13)
+                            }}>
+                            <BookCard element={element} category={"NEW ARRIVALS"} />
+                            </div>
                         )
                     })}
                     {ViewMore && Article.slice(8).map(element => {
                         return (
-                            <BookCard element={element} category={"NEW ARRIVALS"} id={element.isbn13} showModal={showModal}/>
+                            <div className="lg:w-1/4 mmm:w-1/3 p-4"  key={element.isbn13} onClick={()=>{
+                                showModal(element.isbn13)
+                            }}>
+                            <BookCard element={element} category={"NEW ARRIVALS"} />
+                            </div>
                         )
                     })}
                 </div>

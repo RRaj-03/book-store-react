@@ -5,8 +5,7 @@ const Modal = () => {
     const { reset,Book,modal,fetchData } =context
     useEffect(() => {
         if(modal.id){
-          fetchData(modal.id).then(()=>{console.log('Book', Book)})   
-        
+          fetchData(modal.id).then(()=>{})   
         }
         }, [modal])
     return (
