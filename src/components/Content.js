@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect, useContext } from 'react';
-import modalContext from '../context/modalContext';
+import modalContext from '../context/modal/modalContext';
 import BookCard from './BookCard';
 import {useParams} from 'react-router-dom';
 const Content = (props) => {
@@ -36,7 +36,7 @@ const Content = (props) => {
     <section className="text-gray-600 body-font">
             <div className="container my-container px-5 py-14 mx-auto">
                 <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center">
-                    <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{search}</h1>
+                    <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{search.toUpperCase()}</h1>
                     <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">{Article.length===0?"":"Here Is What We Found For You"}</p>
                 </div>
                 <div className="flex flex-wrap justify-center m-4">

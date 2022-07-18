@@ -1,16 +1,21 @@
 import React, { useContext,useEffect } from 'react'
-import modalContext from '../context/modalContext'
+import CartContext from '../context/cart/cartContext'
+import modalContext from '../context/modal/modalContext'
 const Modal = () => {
-    const context = useContext(modalContext)
-    const { reset,Book,modal,fetchData } =context
+    const Modalcontext = useContext(modalContext)
+    const cartContext = useContext(CartContext)
+    const { reset,Book,modal,fetchData } =Modalcontext
+    const { cart,setcart}=cartContext
+    var newcartitem = true
     useEffect(() => {
         if(modal.id){
           fetchData(modal.id).then(()=>{})   
+          
         }
         }, [modal])
     return (
         modal.id && <>
-            <div id="extralarge-modal" tabIndex="-1" className=" overflow-y-scroll overflow-x-hidden fixed top-0 right-0 left-0 z-[51] w-full md:inset-0 h-modal h-full" >
+            <div id="extralarge-modal" tabIndex="-1" className=" overflow-y-scroll overflow-x-hidden fixed top-0 right-0 left-0 z-[51] w-full md:inset-0 h-modal" >
                 <div className="relative p-4 w-full max-w-7xl h-full md:h-auto m-auto z-[52]" >
                     <div className="relative bg-white rounded-lg shadow">
                         <div className="flex justify-between items-center p-5 rounded-t border-b bg-[#1717197a]">
@@ -53,7 +58,20 @@ const Modal = () => {
 
                                         <div className="flex">
                                             <span className="title-font font-medium text-2xl text-gray-900">{Book.price}</span>
-                                            <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+                                            <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" onClick={(event)=>{
+                                                event.preventDefault();
+                                                const newitem = Book;
+                                                newcartitem= true
+                                                cart.forEach(element => {
+                                                    if(element.Book.isbn13===newitem.isbn13){
+                                                        element.qty++
+                                                        newcartitem=false
+                                                    }
+                                                });
+                                                if(newcartitem){
+                                                    setcart(cart.concat({Book:newitem,qty:1}))
+                                                }
+                                            }}>Add to Cart</button>
 
                                         </div>
                                     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect, useContext } from 'react';
-import modalContext from '../context/modalContext';
+import modalContext from '../context/modal/modalContext';
 import BookCard from './BookCard';
 const Home = (props) => {
     const context = useContext(modalContext)
@@ -18,6 +18,8 @@ const Home = (props) => {
         fetchDataBooks()
     }, [])
     return (<>
+        <div className="container m-auto">
+        </div>
         <div className='mt-10'>
             <div className="flex flex-wrap m-auto my-container container justify-center">
                 <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center">
@@ -119,7 +121,7 @@ const Home = (props) => {
                 <div className="flex flex-wrap justify-center m-4">
                     {Article.slice(0, 8).map(element => {
                         return (
-                            <div className="lg:w-1/4 mmm:w-1/3 p-4"  key={element.isbn13} onClick={()=>{
+                            <div className="lg:w-1/4 mmm:w-1/3 p-4 "  key={element.isbn13} onClick={()=>{
                                 showModal(element.isbn13)
                             }}>
                             <BookCard element={element} category={"NEW ARRIVALS"} />
