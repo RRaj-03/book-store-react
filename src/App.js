@@ -7,6 +7,7 @@ import Cart from './components/Cart';
 import Content from './components/Content';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import CartState from './context/cart/CartState';
+import Genre from './components/Genre';
 function App() {
   
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route  path="content/:search" element={<Content />} />
         <Route  path="cart" element={<Cart/>} />
+        <Route exact path="genre" element={<Genre/>}/>
     </Routes>
     <Modal/>
     <Footer/>

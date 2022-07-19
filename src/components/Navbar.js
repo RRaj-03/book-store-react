@@ -88,7 +88,7 @@ const Navbar = (props) => {
                     </form>
 
                     <div className='w-full text-center flex flex-col items-center text-base justify-center mb-10 '>
-                        <div className='text-3xl mt-3 font-bold'>Geners</div>
+                        <Link to={"/genre"} className='text-3xl mt-3 font-bold rounded-md hover:text-gray-200 hover:bg-indigo-500 w-full px-4 py-1'>Geners</Link>
                         <Link to={"/content/tech"} className="w-full text-xl px-4 py-2 rounded-md hover:text-gray-200 hover:bg-indigo-500 my-1 mt-3">Tech</Link>
                         <Link to={"/content/sports"} className="w-full text-xl px-4 py-2 rounded-md hover:text-gray-200 hover:bg-indigo-500 my-1 ">Sports</Link>
                         <Link to={"/content/physics"} className="w-full text-xl px-4 py-2 rounded-md hover:text-gray-200 hover:bg-indigo-500 my-1 ">Physics</Link>

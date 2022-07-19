@@ -5,7 +5,7 @@ import BookCard from './BookCard';
 import {useParams} from 'react-router-dom';
 const Content = (props) => {
     let params = useParams();
-    const search = params.search
+    const search = params.search || props.search
     const context = useContext(modalContext)
     const { showModal } =context
     const [reload, setReload] = useState(false)
