@@ -2,6 +2,7 @@ import React from 'react'
 import { useState,useContext } from 'react'
 import { useNavigate, Link } from "react-router-dom";
 import CartContext from "../context/cart/cartContext";
+import Alert from './Alert';
 const Navbar = (props) => {
     const cartContext = useContext(CartContext)
     const { cart}=cartContext
@@ -88,7 +89,7 @@ const Navbar = (props) => {
                     </form>
 
                     <div className='w-full text-center flex flex-col items-center text-base justify-center mb-10 '>
-                        <Link to={"/genre"} className='text-3xl mt-3 font-bold rounded-md hover:text-gray-200 hover:bg-indigo-500 w-full px-4 py-1'>Geners</Link>
+                        <Link to={"/genre"} className='text-3xl mt-3 font-bold rounded-md hover:text-gray-200 hover:bg-indigo-500 w-full px-4 py-1'>Genres</Link>
                         <Link to={"/content/tech"} className="w-full text-xl px-4 py-2 rounded-md hover:text-gray-200 hover:bg-indigo-500 my-1 mt-3">Tech</Link>
                         <Link to={"/content/sports"} className="w-full text-xl px-4 py-2 rounded-md hover:text-gray-200 hover:bg-indigo-500 my-1 ">Sports</Link>
                         <Link to={"/content/physics"} className="w-full text-xl px-4 py-2 rounded-md hover:text-gray-200 hover:bg-indigo-500 my-1 ">Physics</Link>
@@ -97,6 +98,8 @@ const Navbar = (props) => {
                     </div>
                 </nav>
             </div>
+<Alert/>
+
         </header>
     )
 }

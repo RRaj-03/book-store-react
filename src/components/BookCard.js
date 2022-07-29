@@ -3,8 +3,9 @@ const BookCard = (props) => {
     
     return (
         <>
-        
-            <a className="block relative h-48 rounded overflow-hidden ">
+        <div className='hover:bg-gray-300 p-4'>
+            
+        <a className="block relative h-48 rounded overflow-hidden ">
                 <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={props.element.image} />
             </a>
             <div className="mt-4">
@@ -12,6 +13,7 @@ const BookCard = (props) => {
                 <h2 className="text-gray-900 title-font text-lg font-medium">{props.element.title}</h2>
                 <p className="mt-1">{props.element.price}</p>
             </div>
+        </div>
         
         </>
     )

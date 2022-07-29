@@ -1,11 +1,14 @@
 import React, { useContext,useEffect } from 'react'
 import CartContext from '../context/cart/cartContext'
 import modalContext from '../context/modal/modalContext'
+import Alertcontext from '../context/alert/alertContext'
 const Modal = () => {
     const Modalcontext = useContext(modalContext)
     const cartContext = useContext(CartContext)
+    const alertcontext= useContext(Alertcontext)
     const { reset,Book,modal,fetchData } =Modalcontext
     const { cart,setcart}=cartContext
+    const {showAlert} = alertcontext
     var newcartitem = true
     useEffect(() => {
         if(modal.id){
@@ -36,7 +39,7 @@ const Modal = () => {
                                         <h2 className="text-sm title-font text-gray-500 tracking-widest">{Book.authors + "'s"}</h2>
                                         <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{Book.title}</h1>
                                         <div className="flex mb-4">
-                                            <a className="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1">Detail</a>
+                                            <div className="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1">Detail</div>
                                         </div>
                                         <p className="leading-relaxed mb-4">{Book.desc} </p>
                                         <div className="flex border-t border-gray-200 py-2">
@@ -66,10 +69,12 @@ const Modal = () => {
                                                     if(element.Book.isbn13===newitem.isbn13){
                                                         element.qty++
                                                         newcartitem=false
+                                                        showAlert('your item qty is increased by 1','success')
                                                     }
                                                 });
                                                 if(newcartitem){
                                                     setcart(cart.concat({Book:newitem,qty:1}))
+                                                    showAlert('your item is added to cart','success')
                                                 }
                                             }}>Add to Cart</button>
 

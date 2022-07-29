@@ -5,7 +5,7 @@ const Genre = () => {
      const categories = ["tech","sports","physics","chem","math"]
   return (
     <>
-    {categories.map(element=>{
+    {categories.map((element,index)=>{
         return(
             <div key={element} className='container m-auto'>
                 <Content search={element}/>

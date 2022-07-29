@@ -45,7 +45,7 @@ const Content = (props) => {
                             <div className="lg:w-1/4 mmm:w-1/3 p-4"  key={element.isbn13} onClick={()=>{
                                 showModal(element.isbn13)
                             }}>
-                            <BookCard element={element} category={search} showModal={showModal}/>
+                            <BookCard element={element} category={search} />
                             </div>
                         )
                     })}

@@ -1,9 +1,14 @@
-import React, { useState,useContext } from "react";
+import React, { useContext } from "react";
 import CartContext from "../context/cart/cartContext";
 import CartCard from "./CartCard";
+import Alertcontext from '../context/alert/alertContext'
 
-function Cart() {
-  const cartContext = useContext(CartContext)
+
+function Cart(props) {
+    const alertcontext= useContext(Alertcontext)
+    const cartContext = useContext(CartContext)
+    const {showAlert} = alertcontext
+
   const { cart}=cartContext
   function Total() {
     let sum = 0
@@ -52,7 +57,9 @@ function Cart() {
                                                 <p className="text-2xl leading-normal text-gray-800">Total</p>
                                                 <p className="text-2xl font-bold leading-normal text-right text-gray-800">{parseFloat(Subtotal*(1.06)).toFixed(2)}</p>
                                             </div>
-                                            <button  className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white">
+                                            <button  className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white" onClick={()=>{
+                                                showAlert("You have checkedOut Successfully","success")
+                                            }}>
                                                 Checkout
                                             </button>
                                         </div>

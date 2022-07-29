@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import modalContext from '../context/modal/modalContext';
 import BookCard from './BookCard';
 const Home = (props) => {
@@ -24,92 +25,51 @@ const Home = (props) => {
             <div className="flex flex-wrap m-auto my-container container justify-center">
                 <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center">
                     <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">GENRES</h1>
-                    <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table.</p>
+                    <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea amet ullam iusto numquam explicabo tempore, sed debitis </p>
                 </div>
-                <div className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2">
-                    <div className="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="https://dummyimage.com/542x460" />
+                <Link className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2" to={"/content/math"}>
+                    <div className="flex flex-wrap w-full bg-[#eaeaec] sm:py-24 py-16 sm:px-10 px-6 relative hover:bg-gray-300">
                         <div className="text-center relative z-10 w-full">
-                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                            <p className="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                            <a className="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
+                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Maths</h2>
                         </div>
                     </div>
-                </div>
-                <div className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2">
-                    <div className="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="https://dummyimage.com/542x460" />
+                </Link>
+                <Link className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2" to={"/content/chem"}>
+                    <div className="flex flex-wrap w-full bg-[#eaeaec] sm:py-24 py-16 sm:px-10 px-6 relative hover:bg-gray-300">
                         <div className="text-center relative z-10 w-full">
-                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                            <p className="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                            <a className="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
+                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Chemistry</h2>
                         </div>
                     </div>
-                </div>
-                <div className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2">
-                    <div className="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="https://dummyimage.com/542x460" />
+                </Link>
+                <Link className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2" to={"/content/physics"}>
+                    <div className="flex flex-wrap w-full bg-[#eaeaec] sm:py-24 py-16 sm:px-10 px-6 relative hover:bg-gray-300">
                         <div className="text-center relative z-10 w-full">
-                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                            <p className="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                            <a className="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
+                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Physics</h2>
                         </div>
                     </div>
-                </div>
-                <div className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2">
-                    <div className="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="https://dummyimage.com/542x460" />
+                </Link>
+                <Link className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2" to={"/content/sports"}>
+                    <div className="flex flex-wrap w-full bg-[#eaeaec] sm:py-24 py-16 sm:px-10 px-6 relative hover:bg-gray-300">
                         <div className="text-center relative z-10 w-full">
-                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                            <p className="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                            <a className="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
+                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Sports</h2>
                         </div>
                     </div>
-                </div>
-                <div className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2">
-                    <div className="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="https://dummyimage.com/542x460" />
+                </Link>
+                <Link className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2" to={"/content/tech"}>
+                    <div className="flex flex-wrap w-full bg-[#eaeaec] sm:py-24 py-16 sm:px-10 px-6 relative hover:bg-gray-300">
                         <div className="text-center relative z-10 w-full">
-                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                            <p className="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                            <a className="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
+                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Tech</h2>
                         </div>
                     </div>
-                </div>
-                <div className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2">
-                    <div className="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="https://dummyimage.com/542x460" />
-                        <div className="text-center relative z-10 w-full">
-                            <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                            <p className="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                            <a className="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
+                </Link>
+                <Link className="px-2 w-full my-2 lg:w-1/3 sm:w-1/2" to={"/genre"}>
+                    <div className="flex flex-wrap w-full bg-[#eaeaec] sm:py-24 py-16 sm:px-10 px-6 relative hover:bg-gray-300">
+                        <div className="text-center relative z-10 w-full mt-3 text-indigo-500 justify-center inline-flex items-center">
+                            <h2 className="text-xl text-gray-900 font-medium title-font">View ALL</h2>
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </div>
                     </div>
-                </div>
+                </Link>
             </div>
         </div>
         <section className="text-gray-600 body-font">
@@ -121,7 +81,7 @@ const Home = (props) => {
                 <div className="flex flex-wrap justify-center m-4">
                     {Article.slice(0, 8).map(element => {
                         return (
-                            <div className="lg:w-1/4 mmm:w-1/3 p-4 "  key={element.isbn13} onClick={()=>{
+                            <div className="lg:w-1/4 mmm:w-1/3 "  key={element.isbn13} onClick={()=>{
                                 showModal(element.isbn13)
                             }}>
                             <BookCard element={element} category={"NEW ARRIVALS"} />
