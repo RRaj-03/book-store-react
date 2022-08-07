@@ -2,7 +2,7 @@ import React from 'react'
 import { useState,useContext } from 'react'
 import { useNavigate, Link } from "react-router-dom";
 import CartContext from "../context/cart/cartContext";
-import Alert from './Alert';
+import Alert from './Alert.js';
 const Navbar = (props) => {
     const cartContext = useContext(CartContext)
     const { cart}=cartContext

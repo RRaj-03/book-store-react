@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect,useState } from "react";
 import CartContext from "../context/cart/cartContext";
 import CartCard from "./CartCard";
 import Alertcontext from '../context/alert/alertContext'
@@ -17,7 +17,12 @@ function Cart(props) {
     });
     return sum
   }
-  const Subtotal = Total()
+  const [Subtotal, setSubtotal] = useState(Total())
+  useEffect(() => {
+    let temp=Total()
+    setSubtotal(temp)
+  }, [cart])
+  
     return (
         <>
             <div>    
@@ -41,7 +46,7 @@ function Cart(props) {
                                             <p className="text-4xl font-black leading-9 text-gray-800">Summary</p>
                                             <div className="flex items-center justify-between pt-16">
                                                 <p className="text-base leading-none text-gray-800">Subtotal</p>
-                                                <p className="text-base leading-none text-gray-800">{Subtotal}</p>
+                                                <p className="text-base leading-none text-gray-800">{parseFloat(Subtotal).toFixed(2)}</p>
                                             </div>
                                             <div className="flex items-center justify-between pt-5">
                                                 <p className="text-base leading-none text-gray-800">Shipping(3%)</p>
