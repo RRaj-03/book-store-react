@@ -44,7 +44,7 @@ const Navbar = (props) => {
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                     </svg>
-                    <span className="ml-3 text-xl mmm:block hidden">Tailblocks</span>
+                    <span className="ml-3 text-xl mmm:block hidden">Book-store</span>
                 </Link>
                 <Link to={"/cart"}>
                     <button className="inline-flex relative  items-center mx-2 text-white bg-indigo-500 hover:bg-indigo-600 border-0 py-1 px-3 focus:outline-none rounded text-base md:mt-0"><span className="mmm:block hidden">Cart</span>
